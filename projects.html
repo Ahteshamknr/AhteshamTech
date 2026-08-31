@@ -410,6 +410,33 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
 .foot-social a:hover{border-color:var(--signal-bright);color:var(--signal-bright);transform:translateY(-3px);}
 .foot-social svg{width:14px;height:14px;}
 
+
+/* Project card images */
+.card-project-image{
+  width:100%;
+  height:190px;
+  margin-bottom:22px;
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card-project-image img{
+  width:130%;
+  height:130%;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+  padding:0;
+  display:block;
+}
+@media (max-width:920px){
+  .card-project-image{height:180px;}
+}
+
 /* ---------- responsive ---------- */
 @media (max-width:920px){
   .nav-links{display:none;}
@@ -484,14 +511,18 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
     <div class="wrap">
       <div class="proj-grid reveal-stagger">
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4"><circle cx="32" cy="26" r="14"/><path d="M32 40v14M24 54h16" stroke-linecap="round"/><path d="M25 26a7 7 0 0 1 7-7" stroke-linecap="round"/></svg></div>
+          <div class="card-project-image">
+            <img src="assets/zikrmate-logo.jpeg" alt="ZikrMate logo">
+          </div>
           <span class="status-tag live"><i></i>Published</span>
           <h3>ZikrMate</h3>
           <p class="desc">A full-featured Islamic utility application &mdash; tasbih counter, prayer times, Qibla direction, an Azan reciter system, and a leaderboard.</p>
           <a href="https://play.google.com/store/apps/dev?id=9101728256948503518" target="_blank" rel="noopener" class="card-link">View on Google Play<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4"><rect x="12" y="12" width="40" height="40" rx="4"/><path d="M12 24h40M24 24v28" stroke-linecap="round"/></svg></div>
+          <div class="card-project-image">
+            <img src="assets/madarsamate-logo.png" alt="MadarsaMate logo">
+          </div>
           <span class="status-tag live"><i></i>Published</span>
           <h3>MadarsaMate</h3>
           <p class="desc">A full-stack Madrasa management system &mdash; multi-tenancy, Hifz progress tracking, student management, and role-based access.</p>
@@ -519,7 +550,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
           <a href="https://play.google.com/store/apps/details?id=com.ahteshamtech.zyvolt" target="_blank" rel="noopener" class="card-link">View on Google Play<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4"><circle cx="24" cy="24" r="8"/><circle cx="42" cy="34" r="8"/><path d="M14 50c0-8 6-13 10-13M54 50c0-8-6-13-10-13" stroke-linecap="round"/></svg></div>
+          <div class="card-project-image">
+            <img src="assets/kaam-chahiye-logo.png" alt="Kaam Chahiye logo">
+          </div>
           <span class="status-tag dev"><i></i>In Development</span>
           <h3>Kaam Chahiye</h3>
           <p class="desc">A labour-connect platform, matching daily-wage workers with nearby work opportunities. Actively being developed.</p>
