@@ -438,8 +438,36 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
 }
 
 /* ---------- responsive ---------- */
+/* ---------- mobile menu ---------- */
+.menu-toggle{
+  display:none;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  color:var(--ink);
+  width:38px;height:38px;
+  border-radius:10px;
+  align-items:center;justify-content:center;
+  cursor:pointer;flex-shrink:0;
+  transition:border-color .25s, color .25s;
+}
+.menu-toggle:hover{border-color:var(--signal-bright);color:var(--signal-bright);}
+.menu-toggle svg{width:20px;height:20px;}
+.menu-toggle .icon-close{display:none;}
+.menu-toggle.open .icon-open{display:none;}
+.menu-toggle.open .icon-close{display:block;}
+
 @media (max-width:920px){
-  .nav-links{display:none;}
+  nav.wrap{flex-wrap:wrap;height:auto;min-height:76px;padding-top:14px;padding-bottom:14px;}
+  .nav-links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+    width:100%;max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .35s var(--ease), opacity .3s var(--ease);
+    order:5;
+  }
+  .nav-links.open{max-height:400px;opacity:1;margin-top:18px;padding-top:10px;border-top:1px solid var(--line-soft);}
+  .nav-links a{width:100%;padding:12px 4px;font-size:13px;}
+  .nav-links a::after{display:none;}
+  .menu-toggle{display:inline-flex;}
   .hero-grid{grid-template-columns:1fr;gap:64px;}
   .hero-visual{order:-1;}
   #about-main .grid{grid-template-columns:1fr;gap:44px;}
@@ -451,14 +479,34 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
   .process-step::after{display:none;}
 }
 @media (max-width:640px){
-  .wrap{padding:0 20px;}
-  section{padding:80px 0;}
-  .page-hero{padding:150px 0 60px;}
+  .wrap{padding:0 16px;}
+  section{padding:60px 0;}
+  #about-main{padding-top:10px !important;}
+  .page-hero{padding:130px 0 44px;}
+  .page-hero h1{font-size:clamp(28px,8vw,40px);}
+  .page-hero p.lead{font-size:15px;}
   .proj-grid{grid-template-columns:1fr;}
   .scroll-cue{display:none;}
-  h1.hero-title{font-size:clamp(32px,10vw,48px);}
+  h1.hero-title{font-size:clamp(30px,10vw,48px);}
+  .hero-sub{font-size:15px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .btn{justify-content:center;}
   .live-pill{display:none;}
-  .photo-frame{max-width:280px;}
+  .photo-frame{max-width:240px;}
+  .brand .word{font-size:13px;}
+  .brand img{width:26px;height:26px;}
+  .section-head h2{font-size:clamp(24px,7vw,32px);}
+  .facts{gap:22px;}
+  .fact .num{font-size:22px;}
+  .yt-banner{padding:24px;flex-direction:column;text-align:center;align-items:center;}
+  .yt-banner .left{max-width:100%;}
+  .channel{padding:16px;flex-wrap:wrap;gap:10px;}
+  .foot-wrap{flex-direction:column;align-items:flex-start;gap:18px;}
+  .foot-links{flex-wrap:wrap;gap:16px;row-gap:12px;}
+}
+@media (max-width:380px){
+  .facts{gap:16px;}
+  .focus-card{padding:16px;}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -494,6 +542,10 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
       <div class="live-pill">
         <span class="dot"></span> Available for new projects
       </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
   </nav>
 </header>
@@ -696,6 +748,31 @@ if(peaks){
     const mx = (e.clientX / window.innerWidth - 0.5);
     const my = (e.clientY / window.innerHeight - 0.5);
     peaks.style.transform = `translate(calc(-50% + ${mx*14}px), ${my*8}px)`;
+  });
+}
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if(menuToggle && navLinks){
+  menuToggle.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      navLinks.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 920){
+      navLinks.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
