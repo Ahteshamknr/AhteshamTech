@@ -15,7 +15,7 @@
   })();
 </script>
 <title>Ahtesham Tech — Software Developer | Mobile, Web & Embedded Systems</title>
-<meta name="description" content="Ahtesham Tech is the independent software development practice of Syed Ahtesham Ullah Quadri — mobile applications, web platforms, and embedded systems, engineered end-to-end.">
+<meta name="description" content="I’m Syed Ahtesham Ullah Quadri, an independent software developer and the founder of Ahtesham Tech. I build mobile applications, web platforms, desktop software, and embedded systems end-to-end.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="site-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -415,11 +415,46 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
 .foot-social a:hover{border-color:var(--signal-bright);color:var(--signal-bright);transform:translateY(-3px);}
 .foot-social svg{width:14px;height:14px;}
 
+
+/* Featured Work project images */
+/* Featured Work project images */
+.card-project-image {
+  width: 100%;
+  height: 190px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-project-image img {
+  width: 130%;
+  height: 130%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  padding: 0;
+  display: block;
+}
+@media (max-width:920px){
+  .card-project-image{height:180px;}
+}
+
 /* ---------- responsive ---------- */
 @media (max-width:920px){
   .nav-links{display:none;}
-  .hero-grid{grid-template-columns:1fr;gap:64px;}
-  .hero-visual{order:-1;}
+  .hero-grid{grid-template-columns:1fr;gap:0;}
+  /* Mobile hero order: heading -> founder photo -> description -> buttons */
+  .hero-inner{display:contents;}
+  .hero-inner .eyebrow{order:1;}
+  .hero-inner .hero-title{order:2;}
+  .hero-visual{order:3;width:100%;margin:56px 0;}
+  .hero-inner .hero-sub{order:4;}
+  .hero-inner .hero-cta{order:5;}
   #about-main .grid{grid-template-columns:1fr;gap:44px;}
   .proj-grid{grid-template-columns:repeat(2,1fr);}
   .services-grid{grid-template-columns:1fr;}
@@ -483,7 +518,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
       <div class="hero-inner">
         <div class="eyebrow">Software Developer &mdash; Karimnagar, India</div>
         <h1 class="hero-title">Software, <span class="grad-text">engineered</span><br>end&#8209;to&#8209;end.</h1>
-        <p class="hero-sub">I'm Syed Ahtesham Ullah Quadri, the developer behind Ahtesham Tech &mdash; mobile applications, web platforms, and embedded systems, designed, developed, and maintained end-to-end, with the process documented publicly.</p>
+        <p class="hero-sub">I'm Syed Ahtesham Ullah Quadri, the developer and founder behind Ahtesham Tech. I design, build, deploy, and maintain mobile applications, web platforms, desktop software, and embedded systems end-to-end. I also document my development process publicly.</p>
         <div class="hero-cta">
           <a href="projects.html" class="btn btn-primary">View Projects</a>
           <a href="services.html" class="btn btn-ghost">Explore Services</a>
@@ -527,22 +562,18 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow mono">Featured Work</div>
-        <h2>Products in active use.</h2>
-        <p>A sample of what's shipped. The full list, with status on each, lives on the Projects page.</p>
+        <h2>What I've built.</h2>
+        <p>These are some of the products I have designed and developed. You can explore the full list and see the current status of each project on my Projects page.</p>
       </div>
 
       <div class="proj-grid reveal-stagger">
         <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4">
-              <circle cx="32" cy="26" r="14"/>
-              <path d="M32 40v14M24 54h16" stroke-linecap="round"/>
-              <path d="M25 26a7 7 0 0 1 7-7" stroke-linecap="round"/>
-            </svg>
+          <div class="card-project-image">
+            <img src="zikrmate.jpg" alt="ZikrMate logo">
           </div>
           <span class="status-tag live"><i></i>Published</span>
           <h3>ZikrMate</h3>
-          <p class="desc">A full-featured Islamic utility application &mdash; prayer times, Qibla direction, a reciter system, and a tasbih counter.</p>
+          <p class="desc">I built this full-featured Islamic utility application with prayer times, Qibla direction, a reciter system, and a tasbih counter.</p>
           <a href="https://play.google.com/store/apps/dev?id=9101728256948503518" target="_blank" rel="noopener" class="card-link">
             View on Google Play
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg>
@@ -550,30 +581,25 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
         </div>
 
         <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4">
-              <rect x="12" y="12" width="40" height="40" rx="4"/>
-              <path d="M12 24h40M24 24v28" stroke-linecap="round"/>
-            </svg>
+          <div class="card-project-image">
+            <img src="madarsamate.jpg" alt="MadarsaMate logo">
           </div>
           <span class="status-tag live"><i></i>Published</span>
           <h3>MadarsaMate</h3>
-          <p class="desc">A full-stack Madrasa management system covering student records, Hifz tracking, and role-based access.</p>
+          <p class="desc">I built this full-stack Madrasa management system with student records, Hifz tracking, and role-based access.</p>
           <span class="card-link disabled">Live product</span>
         </div>
 
         <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 64 64" fill="none" stroke="#6d9bff" stroke-width="2.4">
-              <rect x="10" y="14" width="44" height="30" rx="3"/>
-              <path d="M22 50h20M32 44v6" stroke-linecap="round"/>
-              <path d="M18 24h12M18 30h20" stroke-linecap="round"/>
-            </svg>
+          <div class="card-project-image">
+            <img src="kaamchahiye.jpg" alt="Kaam Chahiye logo">
           </div>
-          <span class="status-tag live"><i></i>Published</span>
-          <h3>PC Booster X</h3>
-          <p class="desc">A desktop optimization suite with six functional modules, delivered behind a polished, secured interface.</p>
-          <span class="card-link disabled">Live product</span>
+          <span class="status-tag dev"><i></i>In Development</span>
+          <h3>Kaam Chahiye</h3>
+          <p class="desc">A labour-connect platform I’m building to connect daily-wage workers with nearby work opportunities.</p>
+          <a href="projects.html" class="card-link">View Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
         </div>
       </div>
 
@@ -589,9 +615,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
     <div class="wrap">
       <div class="yt-banner reveal">
         <div class="left">
-          <div class="eyebrow mono" style="margin-bottom:14px;">Development Log</div>
-          <h3>Every build, documented on YouTube.</h3>
-          <p>From first commit to release, the full development process for each product is recorded and published &mdash; design decisions, debugging sessions, and everything in between.</p>
+          <div class="eyebrow mono" style="margin-bottom:14px;">YouTube Channel</div>
+          <h3>Ahtesham Tech on YouTube.</h3>
+          <p>From the first commit to release, I document my development process on YouTube &mdash; design decisions, implementation, debugging, testing, and everything in between.</p>
           <a href="https://www.youtube.com/@Ahtesham_Tech" target="_blank" rel="noopener" class="btn btn-youtube">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="none"/></svg>
             Watch on YouTube
@@ -610,7 +636,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
   <div class="wrap foot-wrap">
     <div class="foot-left">
       <img class="foot-logo-light" src="LOGO.png" alt="Ahtesham Tech mark"><img class="foot-logo-dark" src="LOGO copy.png" alt="" aria-hidden="true">
-      <span>&copy; 2026 Ahtesham Tech &mdash; developed and documented by Syed Ahtesham Ullah Quadri</span>
+      <span>&copy; 2026 Ahtesham Tech &mdash; built by Syed Ahtesham Ullah Quadri</span>
     </div>
     <div class="foot-links">
       <a href="index.html">Home</a>
