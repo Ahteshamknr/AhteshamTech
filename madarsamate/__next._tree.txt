@@ -1,2 +1,2 @@
-:HL["/madarsamate/_next/static/chunks/0hme7y-qn_wjb.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"uXHYeDj7gC57UfegGQwgB"}
+:HL["/madarsamate/_next/static/chunks/0o7f~or_tckti.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"ETw-kx4-pZwprIvCg0-XE"}
