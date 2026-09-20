@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[64025,["/madarsamate/_next/static/chunks/02fgb.b9xphon.js","/madarsamate/_next/static/chunks/09h2j-b9~5i_z.js","/madarsamate/_next/static/chunks/14d95v2q-d4b-.js","/madarsamate/_next/static/chunks/0fy3yhahmba~z.js","/madarsamate/_next/static/chunks/0om_ixw68meku.js","/madarsamate/_next/static/chunks/0t8wq8.3h0.g8.js"],"StudentReportLookup"]
-3:I[97367,["/madarsamate/_next/static/chunks/02fgb.b9xphon.js","/madarsamate/_next/static/chunks/09h2j-b9~5i_z.js","/madarsamate/_next/static/chunks/14d95v2q-d4b-.js","/madarsamate/_next/static/chunks/0fy3yhahmba~z.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/madarsamate/_next/static/chunks/0om_ixw68meku.js","async":true}],["$","script","script-1",{"src":"/madarsamate/_next/static/chunks/0t8wq8.3h0.g8.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yEsoLTwO_x4IFM0JHsC9S"}
-5:null
